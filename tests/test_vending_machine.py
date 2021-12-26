@@ -18,7 +18,10 @@ def test_allowed_money():
     assert actual == expected
 
 
-# def test_vending_machine_total_money():
-#     actual = total_money
-#     expected =
-#     assert actual == expected
+def test_not_permitted_money():
+    with pytest.raises(ValueError):
+        VendingMachine().insert(5)
+
+
+def test_permitted_money():
+    VendingMachine().insert(100)
