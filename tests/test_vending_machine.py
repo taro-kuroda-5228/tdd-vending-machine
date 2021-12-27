@@ -2,6 +2,8 @@ from vending_machine.vending_machine import VendingMachine
 from vending_machine.money import Money
 import pytest
 
+vending_machine = VendingMachine()
+
 
 def test_allowed_money():
     actual = VendingMachine.allowed_money
@@ -20,8 +22,8 @@ def test_allowed_money():
 
 def test_not_permitted_money():
     with pytest.raises(ValueError):
-        VendingMachine().insert(5)
+        vending_machine.insert(5)
 
 
 def test_permitted_money():
-    VendingMachine().insert(100)
+    vending_machine.insert(100)
